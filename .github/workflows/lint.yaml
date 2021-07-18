@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: ansible-lint # https://github.com/marketplace/actions/ansible-lint
-        uses: ansible/ansible-lint-action@v4.1.0.post0
+        uses: ansible/ansible-lint-action@v4.1.0
         with:
           targets: |
             labs/lab1/solution/lab1.yaml
