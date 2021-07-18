@@ -4,7 +4,7 @@ This repo contains a set of Ansible labs that act as an intro to the breadth of 
 ## Automation
 This repo contains basic github actions that perform static linting on commit pushes. These are not covered in the labs but are present for additional learning material related to DevOps pipelines.
 
-
+[![Linting](https://github.com/jon-funk/ansible-labs/actions/workflows/lint.yaml/badge.svg)](https://github.com/jon-funk/ansible-labs/actions/workflows/lint.yaml)
 
 `What's this?` It's a badge that shows the status of various pipeline activities 'at a glance' and are common in many projects.
 
