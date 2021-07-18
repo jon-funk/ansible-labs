@@ -6,7 +6,7 @@ This repo contains basic github actions that perform static linting on commit pu
 
 
 
-`What's this?` It's a badge that shows the status of various pipeline activities 'at a glance' and are common.
+`What's this?` It's a badge that shows the status of various pipeline activities 'at a glance' and are common in many projects.
 
 ## Requirements
 * `docker` a containerization tool
@@ -14,6 +14,7 @@ This repo contains basic github actions that perform static linting on commit pu
 
 `Note:` refer to [requirements.txt](https://github.com/jon-funk/ansible-labs/blob/main/requirements.txt) for explicit dependencies if you'd like to set up the labs outside of a containerized environment. (this is discouraged)
 
+* Understanding of [yaml](https://yaml.org/) which is `whitespace sensitive`
 
 ## How to interact with these labs
 These labs can be worked on in a containerized environment (sandboxed) so that you don't have to install additional dependencies. You just need docker + docker-compose!

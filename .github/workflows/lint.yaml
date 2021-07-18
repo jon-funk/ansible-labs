@@ -1,0 +1,16 @@
+name: Linting
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ansible-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ansible-lint # https://github.com/marketplace/actions/ansible-lint
+        uses: ansible/ansible-lint-action@v4.1.0.post0
+        with:
+          targets: |
+            labs/lab1/solution/lab1.yaml

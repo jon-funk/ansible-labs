@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: Dockerfile
     # Pass additional environment values via the .env file
-    env_file: .env
+    # env_file: .env # this will cause an error if the file does not exist
     # dummy command so that the container does not exit (runs 'forever')
     command: tail -f /dev/null
     # mount the labs directory so that file changes update within the container

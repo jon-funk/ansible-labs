@@ -1,0 +1,20 @@
+---
+- name: Check if file exists and set its content to only our content variable
+  hosts: localhost # name of the host
+  connection: local # Run payloads on the local machine
+  gather_facts: false # Don't spend time gathering facts about the local machine
+  vars: # list of variables in k,v pairs
+    content: Hello
+  tasks:
+    - name: Check file output state
+      file:
+        state: present # creates the file if it's not present, otherwise do nothing. This demonstrates idempotence
+        path: ./output.txt
+
+    - name: Write content to file
+      lineinfile:
+        path: ./output.txt
+        regexp: Hello|World
+        # ansible uses the jinja2 templating engine and by default substitutes values in using the {{ variable }} syntax
+        # a gotcha here is starting a yaml string with '{{' is not valid so we need to quote it
+        line: "{{ content }}"
