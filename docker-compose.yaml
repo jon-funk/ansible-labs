@@ -1,13 +1,11 @@
 # docker-compose version
-version: '3.9'
+version: "3.9"
 
 # LOCAL DEV
 
 services:
   # Ansible container defition
   ansible:
-    # Lets files you create in the container be save-able and not owned by root
-    user: 1000:1000
     # explicit container name
     container_name: ansible
     # build info
@@ -23,7 +21,7 @@ services:
     volumes:
       - type: volume
         source: ansible-cache
-        target: /.ansible/
+        target: /home/dev/.ansible/
       - type: bind
         source: ./labs/
         target: /app/
