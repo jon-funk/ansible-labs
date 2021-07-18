@@ -1,0 +1,24 @@
+# docker-compose version
+version: '3.9'
+
+# LOCAL DEV
+
+services:
+  # Ansible container defition
+  ansible:
+    # Lets files you create in the container be save-able and not owned by root
+    user: 1000:1000
+    # explicit container name
+    container_name: ansible
+    # build info
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Pass additional environment values via the .env file
+    env_file: .env
+    # dummy command so that the container does not exit (runs 'forever')
+    command: tail -f /dev/null
+    # mount the labs directory so that file changes update within the container
+    # Note: mounting files like this is discouraged in a live environment and should only be used for LOCAL dev purposes
+    volumes:
+      - ./labs/:/app/
