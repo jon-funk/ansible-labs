@@ -10,6 +10,7 @@
       file:
         state: touch # creates the file if it's not present, otherwise do nothing. This demonstrates idempotence
         path: ./output.txt
+        mode: "0644"
 
     - name: Write content to file
       lineinfile:
@@ -19,3 +20,4 @@
         # a gotcha here is starting a yaml string with '{{' is not valid so we need to quote it
         line: "{{ content }}"
         state: present
+        mode: "0644"

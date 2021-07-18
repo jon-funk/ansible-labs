@@ -13,3 +13,4 @@
         line: "{{ content }}"
         state: present
         create: yes
+        mode: "0644"
