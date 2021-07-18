@@ -25,7 +25,7 @@ These labs can be worked on in a containerized environment (sandboxed) so that y
 `Note:` this clone command will create the directory `ansible-labs/` with its contents for you
 
 ## Start the ansible container and connect to it through a bash shell
-`docker-compose up ansible && docker-compose exec ansible bash`
+`docker-compose up -d ansible && docker-compose exec ansible bash`
 
 `Note:` this will `build` the ansible image the first time you run it
 
