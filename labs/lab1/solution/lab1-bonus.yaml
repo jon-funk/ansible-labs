@@ -4,7 +4,7 @@
   connection: local
   gather_facts: false
   vars:
-    content: Hello world you
+    content: Hello world
   tasks:
     - name: Write content to file
       lineinfile:
