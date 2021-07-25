@@ -1,0 +1,8 @@
+---
+- name: My first playbook
+  hosts: localhost # name of the host
+  connection: local # Run payloads on the local machine
+  gather_facts: false # Don't spend time gathering facts about the local machine
+  tasks:
+    - name: my first task
+      ping: # this is not equivalent to the ICMP ping, this is a test module used to validate the ansible install
