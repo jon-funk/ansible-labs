@@ -15,3 +15,4 @@ RUN useradd -rm -d /home/dev -s /bin/bash -g root -G sudo -u 1000 dev
 USER dev
 RUN mkdir /home/dev/.ansible/
 RUN mkdir /home/dev/.ansible/tmp/
+VOLUME home/dev/.ansible/

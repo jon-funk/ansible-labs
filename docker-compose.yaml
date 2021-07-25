@@ -19,9 +19,6 @@ services:
     # mount the labs directory so that file changes update within the container
     # Note: mounting files like this is discouraged in a live environment and should only be used for LOCAL dev purposes
     volumes:
-      - type: volume
-        source: ansible-cache
-        target: /home/dev/.ansible/
       - type: bind
         source: ./labs/
         target: /app/
