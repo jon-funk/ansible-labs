@@ -1,0 +1,20 @@
+---
+- name: Check if file exists and set its content to only our content variable
+  hosts: all # name of the host from inventory
+  connection: local # Run payloads on the local machine
+  gather_facts: false # Don't spend time gathering facts about the local machine
+  tasks:
+    - name: output inventory entry
+      vars: # create string block with newlines
+        game: |
+          Title: {{ title }}
+          Genre: {{ genre }}
+          Price: {{ price }}
+          Tax: {{ tax }}
+          Subtotal: {{ subtotal }}
+          Notes: {{ notes }}
+        tax: "{{ (price * 0.12)|float }}"
+        subtotal: "{{ ((price|float) + (tax|float))|float }}"
+      debug:
+        msg: "{{ game.split('\n')[0:-1] }}" # explode on newlines since newlines cant be rendered, dont print last entry
+

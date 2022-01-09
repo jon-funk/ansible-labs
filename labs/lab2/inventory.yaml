@@ -1,0 +1,24 @@
+all:
+  hosts:
+    game1:
+      title: Skyrim
+      genre: hoarding sim
+      price: 10
+      notes:
+    game2:
+      title: Cyberpunk
+      genre: vaporware
+      price: 60
+      notes:
+    game3:
+      title: Diablo
+      genre: looter
+      price: 21.99
+      notes:
+    game4:
+      title: Minecraft
+      genre: survival
+      price: 24.99
+      notes:
+        length: endless
+        language: java
