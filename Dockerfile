@@ -1,5 +1,10 @@
 # Base image from dockerhub
 FROM python:3.9.1 as build
+# Needed apt dep for lab4
+# Must be installed via apt-get
+RUN apt-get update -y && \
+    apt-get install -y python-apt
+
 # Make directories in the image
 RUN mkdir /app
 # Explicitly set permissions on ansible cache
