@@ -1,5 +1,5 @@
 ---
-- name: Check if file exists and set its content to only our content variable
+- name: Print out some arbitrary data from an inventory file
   hosts: all # name of the host from inventory
   connection: local # Run payloads on the local machine
   gather_facts: false # Don't spend time gathering facts about the local machine
