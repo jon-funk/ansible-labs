@@ -1,0 +1,10 @@
+{
+    "name": "ansible",
+    "dockerComposeFile": [
+        "../docker-compose.yaml"
+    ],
+    "service": "ansible",
+    "shutdownAction": "none",
+    "extensions": [],
+    "workspaceFolder": "/app/"
+}

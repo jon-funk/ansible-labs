@@ -6,6 +6,7 @@ version: "3.9"
 services:
   # Ansible container defition
   ansible:
+    user: dev
     # explicit container name
     container_name: ansible
     # build info
@@ -20,8 +21,8 @@ services:
     # Note: mounting files like this is discouraged in a live environment and should only be used for LOCAL dev purposes
     volumes:
       - type: bind
-        source: ./labs/
-        target: /app/
+        source: .
+        target: /app
 
 volumes:
   ansible-cache: {}
