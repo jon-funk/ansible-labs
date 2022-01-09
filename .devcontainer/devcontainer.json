@@ -5,6 +5,8 @@
     ],
     "service": "ansible",
     "shutdownAction": "none",
-    "extensions": [],
+    "extensions": [
+        "tomaciazek.ansible"
+    ],
     "workspaceFolder": "/app/"
 }
