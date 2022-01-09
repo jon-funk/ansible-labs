@@ -24,6 +24,9 @@ To provide a mathematics example: `x=5` is idempotent because you can repeatadly
 
 - A lot of work in operations goes into ensuring that changes are idempotent, as this makes them much more stable when working with a large inventory and orchestrating configuration changes at-scale. Ansible takes care of this work for you by providing you with a huge list of modules that are already idempotent.
 
+# That's it for lab 0!
+This lab was purely a preamble on Ansible
+
 ## Closing notes
 - Here's an excellent book on Ansible and DevOps https://leanpub.com/ansible-for-devops
 

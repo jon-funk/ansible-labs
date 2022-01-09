@@ -19,6 +19,8 @@ This repo contains basic github actions that perform static linting on commit pu
 ## How to interact with these labs
 These labs can be worked on in a containerized environment (sandboxed) so that you don't have to install additional dependencies. You just need docker + docker-compose!
 
+A `devcontainer` configuration is also supplied so that you can do container-native development with vscode if you wish via [remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+
 ## Clone the code to your local machine in order to work with it
 `git clone git@github.com:jon-funk/ansible-labs.git`
 
