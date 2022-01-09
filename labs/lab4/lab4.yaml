@@ -1,0 +1,20 @@
+---
+- name: Run roles and makefile module
+  hosts: all # name of the host from inventory
+  connection: local # Run payloads on the local machine
+  gather_facts: false # Don't spend time gathering facts about the local machine
+  tasks:
+    - name: Gather package facts
+      package_facts:
+        manager: apt
+    # - debug: var=ansible_facts.packages.keys()|list
+    - name: Check for desired packages
+      debug:
+        msg: "Package {{ item }} is missing!"
+      loop: "{{ req_packages }}"
+      when: "'{{ item }}' not in ansible_facts.packages.keys()|list"
+      failed_when: "'{{ item }}' not in ansible_facts.packages.keys()|list"
+    - name: build artifact with make on host
+      make:
+        chdir: . # uses pwd since we could possibly be out of docker context
+        target: template

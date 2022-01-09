@@ -1,0 +1,9 @@
+all:
+  hosts:
+    localhost:
+      req_packages:
+      - sed
+      - curl
+      - grep
+      # - supersecret
+  
