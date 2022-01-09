@@ -1,0 +1,21 @@
+---
+- name: Check if file exists and set its content to only our content variable
+  hosts: all # name of the host from inventory
+  connection: local # Run payloads on the local machine
+  gather_facts: false # Don't spend time gathering facts about the local machine
+  tasks:
+    - name: run all command first
+      vars:
+        all_cmd: "{{ on_all }} {{ inventory_hostname }}"
+      command: "{{ all_cmd  }}"
+      register: all_out
+      changed_when: false
+    - debug: var=all_out.stdout_lines
+    - name: run command on hostname
+      vars:
+        host_cmd: "{{ cmd }} {{ inventory_hostname }}"
+      command: "{{ host_cmd  }}"
+      register: host_out
+      changed_when: false
+    - debug: var=host_out.stdout_lines
+

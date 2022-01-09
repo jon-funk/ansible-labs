@@ -1,0 +1,9 @@
+all:
+  hosts:
+    google.com:
+      cmd: curl
+    amazon.com:
+      cmd: curl
+  vars:
+    on_all: ping -c 3
+  
