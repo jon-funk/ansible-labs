@@ -12,9 +12,14 @@
       debug:
         msg: "Package {{ item }} is missing!"
       loop: "{{ req_packages }}"
-      when: "'{{ item }}' not in ansible_facts.packages.keys()|list"
-      failed_when: "'{{ item }}' not in ansible_facts.packages.keys()|list"
+      when: "item not in ansible_facts.packages.keys()|list"
+      failed_when: "item not in ansible_facts.packages.keys()|list"
     - name: build artifact with make on host
       make:
-        chdir: . # uses pwd since we could possibly be out of docker context
+        chdir: . # uses pwd since we could possibly be out of docker context on a host
         target: template
+    - name: Check if make artifact exists after
+      file:
+        mode: 0644
+        state: file
+        path: ./output.txt
