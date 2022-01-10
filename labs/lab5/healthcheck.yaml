@@ -1,0 +1,8 @@
+---
+- name: Healthcheck the VM
+  hosts: all # name of the host from inventory
+  connection: local # Run payloads on the local machine
+  gather_facts: false # Don't spend time gathering facts about the local machine
+  tasks:
+  - name: placeholder
+    debug: msg="test"
